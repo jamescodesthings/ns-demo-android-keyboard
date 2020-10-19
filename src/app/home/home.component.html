@@ -1,15 +1,20 @@
-<ActionBar>
+<ActionBar #actionbar>
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
     <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label text="Home"></Label>
+    <Label text="Demo"></Label>
 </ActionBar>
+
 <ScrollView orientation="vertical">
-    <FlexBoxLayout flexDirection="column" justifyContent="center">
-        <Label class="h1" text="Log In Or Something" textAlignment="center"></Label>
-        <TextField [(ngModel)]="email" hint="Email"></TextField>
-        <TextField [(ngModel)]="password" hint="Password" secure="true"></TextField>
-        <Button class="-primary" (tap)="onLogin()" text="Log In"></Button>
+    <!-- This becomes the view that determines how much the page can scroll justifyContent defaults to flex-start -->
+    <FlexBoxLayout flexDirection="column" [height]="scrollableAreaHeight">
+        <!-- This is our content that was previously centered at full screen size (100%), we always want it to stay that size -->
+        <FlexBoxLayout flexDirection="column" justifyContent="center" [height]="screenHeightWithoutActionBarHeight">
+            <Label class="h1" text="Log In Or Something" textAlignment="center"></Label>
+            <TextField [(ngModel)]="email" hint="Email"></TextField>
+            <TextField [(ngModel)]="password" hint="Password" secure="true"></TextField>
+            <Button class="-primary" (tap)="onLogin()" text="Log In"></Button>
+        </FlexBoxLayout>
     </FlexBoxLayout>
 </ScrollView>

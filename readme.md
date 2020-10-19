@@ -2,6 +2,13 @@
 
 Original Issue: https://github.com/ProgressNS/nativescript-ui-feedback/issues/730
 
+## Before
+![Demo Before](./docs/demo-before-optimized.gif)
+- Note that when the keyboard is open I am unable to scroll.
+
+## After
+todo
+
 ## Summary
 The problem here appears to be that the native options are not ideal for the layouts used in nativescript given a particular layout. This usually leads to workarounds that are not ideal for every situation (changing to adjustResize/etc.).
 
