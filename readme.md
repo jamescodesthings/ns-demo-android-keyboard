@@ -16,6 +16,13 @@ Similar to overlaying auto-hiding AppBars in web, when the screen content is ove
 
 This should allow the Android keyboard to work similarly to the nativescript-iqkeyboardmanager plugin.
 
+## Running the demo
+```bash
+npm i
+ns platform add android && ns prepare android
+ns run android --device "Your device or AVD ID"
+```
+
 ## Implementation
 - Add `@bigin/ns-soft-keyboard` which reports the size of the keyboard on keyboard size changes.
 - On Keyboard size change:
@@ -23,6 +30,9 @@ This should allow the Android keyboard to work similarly to the nativescript-iqk
 ```
 Screen Height in DIPs + Keyboard height in DIPs.
 ```
+
+### Important code fragments
+-
 
 ## Caveats
 1) The above premise works as-is but is based on page content that fits within the viewport height of the device.
