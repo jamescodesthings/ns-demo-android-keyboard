@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { Application } from "@nativescript/core";
+import { Application, alert } from "@nativescript/core";
 
 @Component({
     selector: "Home",
@@ -8,12 +8,17 @@ import { Application } from "@nativescript/core";
 })
 export class HomeComponent implements OnInit {
 
+    email: string = null;
+    password: string = null;
+
     constructor() {
-        // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
-        // Init your component properties here.
+    }
+
+    onLogin() {
+        alert('Cool, you logged in');
     }
 
     onDrawerButtonTap(): void {
